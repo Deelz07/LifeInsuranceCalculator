@@ -1,4 +1,4 @@
-import scipy
+# import scipy
 import streamlit as st
 
 # from txt_to_list import convert_to_table
