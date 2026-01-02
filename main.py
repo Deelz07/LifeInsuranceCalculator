@@ -22,7 +22,7 @@ fairprice = epv*sum_insured
 
 # premium = calculate_premium(age, sum_insured)
 
-if end_age >= start_age:
+if end_age > start_age:
     st.write("Expected value of contract is", epv  )
 else:
     st.write("End age needs to be higher than start age")
