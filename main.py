@@ -20,14 +20,15 @@ assurance_epv = lifetable.disc_assurance_EV(interest_rate,start_age,end_age)
 
 annuity_epv = lifetable.disc_annuity_EV(interest_rate,start_age,end_age)
 sum_insured = st.number_input("Sum Insured", min_value=1000)
-fairprice = assurance_epv*sum_insured/annuity_epv
+
 
 # premium = calculate_premium(age, sum_insured)
 
 if end_age > start_age:
+    fairprice = assurance_epv*sum_insured/annuity_epv
     st.write("Expected value of contract is", assurance_epv)
     st.write("Expected value of annuity is:", annuity_epv )
-    st.write("A fair annual premium under AM92 Basis is:", assurance_epv*sum_insured/(annuity_epv))
+    st.write("A fair annual premium under AM92 Basis is:", fairprice)
 else:
     st.write("End age needs to be higher than start age")
 
