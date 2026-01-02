@@ -16,9 +16,11 @@ end_age = st.slider("Contract End Age", 17, 117)
 
 interest_rate = st.slider("Interest rate (%)",0,20)/100
 
-epv = lifetable.assurance_EV(interest_rate,start_age,end_age)
+assurance_epv = lifetable.disc_assurance_EV(interest_rate,start_age,end_age)
+
+annuity_epv = lifetable.disc_annuity_EV(interest_rate,start_age,end_age)
 sum_insured = st.number_input("Sum Insured", min_value=1000)
-fairprice = epv*sum_insured
+fairprice = assurance_epv*sum_insured/annuity_epv
 
 # premium = calculate_premium(age, sum_insured)
 
@@ -27,7 +29,7 @@ if end_age > start_age:
 else:
     st.write("End age needs to be higher than start age")
 
-st.write("A fair price of the contract is",fairprice)
+
 
 # st.write 
 # st.write("Premium:", premium)
