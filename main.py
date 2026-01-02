@@ -25,7 +25,9 @@ fairprice = assurance_epv*sum_insured/annuity_epv
 # premium = calculate_premium(age, sum_insured)
 
 if end_age > start_age:
-    st.write("Expected value of contract is", epv  )
+    st.write("Expected value of contract is", assurance_epv)
+    st.write("Expected value of annuity is:", annuity_epv )
+    st.write("A fair annual premium under AM92 Basis is:", assurance_epv*sum_insured/(annuity_epv))
 else:
     st.write("End age needs to be higher than start age")
 
